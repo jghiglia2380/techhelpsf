@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Help with Justin</title>
+<meta name="description" content="In-home tech help in Pacific Heights and San Francisco. I clean up your phone, computer, photos, email, and passwords, and show you how to use AI.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root {
+  --paper: #f7f8fb;
+  --ink: #162642;
+  --muted: #55627a;
+  --gold: #f4c95d;
+  --line: #d3dae6;
+  --card: #ffffff;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #101a2c; --ink: #ecf0f6; --muted: #a3b0c6; --line: #2c3a52; --card: #16223a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #101a2c; --ink: #ecf0f6; --muted: #a3b0c6; --line: #2c3a52; --card: #16223a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 64px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; max-width: 62ch; }
+.label { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.hl { background: linear-gradient(transparent 58%, var(--gold) 58%, var(--gold) 88%, transparent 88%); padding-inline: 2px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { background: none; color: var(--gold); } }
+
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.hero > * { min-width: 0; }
+.hero .lede { font-size: 1.2rem; color: var(--muted); margin-top: 18px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { font-family: var(--display); font-weight: 700; font-size: 1rem; text-decoration: none; padding: 12px 20px; border-radius: 6px; border: 2px solid var(--ink); color: var(--ink); background: var(--card); overflow-wrap: anywhere; }
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.visit { font-family: var(--mono); font-size: 0.92rem; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; transform: rotate(-1.2deg); box-shadow: 0 10px 24px rgba(22,38,66,0.08); display: grid; gap: 8px; }
+.visit .row { display: flex; gap: 10px; align-items: baseline; }
+.visit .row b { color: #2f8a57; font-weight: 600; }
+.visit .done { border-top: 2px solid var(--ink); padding-top: 8px; margin-top: 4px; font-weight: 600; }
+.visit .done span { background: var(--gold); color: #162642; padding: 0 4px; }
+
+.section { display: grid; gap: 22px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 20px; }
+.item { display: grid; gap: 8px; align-content: start; padding-top: 14px; border-top: 2px solid var(--ink); }
+.item p { color: var(--muted); font-size: 1rem; }
+
+.rules { display: grid; gap: 12px; background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--gold); border-radius: 6px; padding: 22px 24px; }
+.rules ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+
+.about { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; }
+.about > * { min-width: 0; }
+.about img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.about .text { display: grid; gap: 16px; }
+
+.price { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tier { background: var(--card); border: 2px solid var(--ink); border-radius: 6px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+.tier .num { font-family: var(--display); font-weight: 800; font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.tier .num small { font-family: var(--mono); font-size: 0.95rem; font-weight: 400; color: var(--muted); }
+.tier p { color: var(--muted); font-size: 1rem; }
+.fine { color: var(--muted); font-size: 0.95rem; }
+
+.contact { display: grid; gap: 14px; }
+footer { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 760px) {
+  .hero, .about, .price { grid-template-columns: 1fr; }
+  .grid3 { grid-template-columns: 1fr; }
+  .visit { transform: none; }
+  .about img { max-width: 220px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <div class="label">In-home tech help · Pacific Heights &amp; SF</div>
+      <h1 style="margin-top:12px">Your tech, <span class="hl">made simple</span>.</h1>
+      <p class="lede">I come to your home and clean up your phone, computer, photos, email, and passwords. Then I show you how to use it all, AI included, in plain English.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Book a visit</a>
+        <a class="btn" href="#price">See pricing</a>
+      </div>
+    </div>
+    <div class="visit" aria-label="A sample visit checklist">
+      <div class="label">Thursday, 10:00am</div>
+      <div class="row"><b>✓</b><span>iPhone + Mac synced</span></div>
+      <div class="row"><b>✓</b><span>12,400 photos backed up</span></div>
+      <div class="row"><b>✓</b><span>Passwords in one safe place</span></div>
+      <div class="row"><b>✓</b><span>Printer works (finally)</span></div>
+      <div class="row"><b>✓</b><span>ChatGPT set up for email</span></div>
+      <div class="done">everything works <span>✓</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="label">What I help with</div>
+    <div class="grid3">
+      <div class="item"><h3>Clean up</h3><p>Files, photos, and email sorted. Duplicates gone. You can find things again.</p></div>
+      <div class="item"><h3>Back up</h3><p>Photos and files saved in two places, so nothing gets lost.</p></div>
+      <div class="item"><h3>Stay safe</h3><p>Passwords in one place, two-step login, and how to spot scam emails and texts.</p></div>
+      <div class="item"><h3>Make it all work together</h3><p>Phone, computer, tablet, printer, and Wi-Fi. Apple, Google, or Microsoft.</p></div>
+      <div class="item"><h3>New devices</h3><p>Help picking a new phone or computer, then moving everything over.</p></div>
+      <div class="item"><h3>Use AI</h3><p>Learn ChatGPT and other AI tools for the things you actually do: email, travel, documents, research.</p></div>
+    </div>
+  </section>
+
+  <section class="rules">
+    <div class="label">My rules</div>
+    <ul>
+      <li>I delete nothing without your OK.</li>
+      <li>You type your own passwords.</li>
+      <li>I explain every change in plain English, and leave you a short written summary.</li>
+    </ul>
+  </section>
+
+  <section class="section about">
+    <img src="justin.jpg" alt="Justin, smiling, with the San Francisco skyline behind him" width="640" height="640">
+    <div class="text">
+      <div class="label">About me</div>
+      <h2>Hi, I'm Justin.</h2>
+      <p>I'm an SF native and a Pac Heights local. I've taught since 2013, and I founded Startup Smartup and PFL Academy, two education companies. I use AI every day to build what we make.</p>
+      <p>Years in hospitality taught me patience and to put the guest first. Now I help neighbors get their tech under control, without the jargon.</p>
+    </div>
+  </section>
+
+  <section class="section" id="price">
+    <div class="label">Pricing</div>
+    <div class="price">
+      <div class="tier">
+        <h3>Tech help</h3>
+        <div class="num">$150<small> / hour</small></div>
+        <p>For a specific problem or a lesson. One hour minimum.</p>
+      </div>
+      <div class="tier">
+        <h3>Digital Life Reset</h3>
+        <div class="num">$500<small> starting</small></div>
+        <p>A full cleanup: devices, photos, backups, passwords, and email. Bigger jobs quoted up front.</p>
+      </div>
+    </div>
+    <p class="fine">No charge for travel in the neighborhood. Weekday, evening, and weekend visits.</p>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="label">Get started</div>
+    <h2>Book a visit</h2>
+    <p>Email me. Tell me what's bugging you and what devices you have. I'll reply within a day.</p>
+    <div class="cta-row" style="margin-top:0">
+      <a class="btn primary" href="mailto:justin@techhelpsf.com">justin@techhelpsf.com</a>
+    </div>
+  </section>
+
+  <footer>Tech Help with Justin · San Francisco</footer>
+</main>
+</body>
+</html>
